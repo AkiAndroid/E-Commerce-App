@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "656800914772",
+    "firebase_url": "https://secondhand-ab03c.firebaseio.com",
+    "project_id": "secondhand-ab03c",
+    "storage_bucket": "secondhand-ab03c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656800914772:android:d295aa6055887ba8dbbcc1",
+        "android_client_info": {
+          "package_name": "com.example.secondhand"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "656800914772-80k0in19k6gvv5elen8reeplg4vbv5oh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.secondhand",
+            "certificate_hash": "8ef4e17ce973086145882b78d4184c406c6e6736"
+          }
+        },
+        {
+          "client_id": "656800914772-ojojfsnu5bfevg4tme01h2mn67gl4bbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqsf-lJD5qzsCdC6OiqmiUDucHG2gF9xA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "656800914772-ojojfsnu5bfevg4tme01h2mn67gl4bbj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

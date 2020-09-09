@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminCategoryActivity">
+
+
+    <TextView
+        android:id="@+id/pagename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="Selling Craft"
+        android:textSize="35sp"
+        android:textColor="@color/colorPrimary"
+        android:fontFamily="cursive"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+        android:id="@+id/categoryholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pagename"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="60dp">
+
+        <ImageView
+            android:id="@+id/foodimage"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:src="@drawable/food_image"/>
+
+        <ImageView
+            android:id="@+id/bookimage"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/book_image"/>
+
+        <ImageView
+            android:id="@+id/electronics_image"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:src="@drawable/electronics_image"
+            android:layout_marginTop="70dp"/>
+
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

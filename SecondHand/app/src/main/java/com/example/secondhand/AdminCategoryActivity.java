@@ -2,10 +2,14 @@ package com.example.secondhand;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.secondhand.Models.Users;
+import com.example.secondhand.Preval.Prevalent;
 
 public class AdminCategoryActivity extends AppCompatActivity {
 
@@ -16,24 +20,19 @@ public class AdminCategoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_category);
 
-        foodimage=findViewById(R.id.foodimage);
+
         bookimage=findViewById(R.id.bookimage);
         deviceimage=findViewById(R.id.electronics_image);
 
-        foodimage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),ProductAddingActivity.class);
-                intent.putExtra("category","Food");
-                startActivity(intent);
-            }
-        });
+
 
         bookimage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent=new Intent(getApplicationContext(),ProductAddingActivity.class);
                 intent.putExtra("category","Book");
+                intent.putExtra("sellerrollno", Prevalent.CurrentOnlineUsers.getRollno());
                 startActivity(intent);
             }
         });
@@ -42,6 +41,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(),ProductAddingActivity.class);
+                intent.putExtra("sellerrollno", Prevalent.CurrentOnlineUsers.getRollno());
                 intent.putExtra("category","Electronics");
                 startActivity(intent);
             }

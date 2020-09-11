@@ -148,8 +148,8 @@ TextView Adminpagelink,Userpagelink,pagename;
 
                                         Toast.makeText(loginactivity.this, "Logged in Sucessfully", Toast.LENGTH_SHORT).show();
                                         loadingbar.dismiss();
-
                                         Intent intent=new Intent(getApplicationContext(),HomeActivity.class);
+                                        Prevalent.CurrentOnlineUsers=userData;
                                         startActivity(intent);
 
                                     }

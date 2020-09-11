@@ -96,7 +96,7 @@
         <ImageView
             android:id="@+id/upload_image"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"

@@ -30,11 +30,7 @@
         android:gravity="center"
         android:layout_marginTop="60dp">
 
-        <ImageView
-            android:id="@+id/foodimage"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:src="@drawable/food_image"/>
+
 
         <ImageView
             android:id="@+id/bookimage"

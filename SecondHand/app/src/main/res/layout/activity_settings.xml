@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/settings_profile_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/image1"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/change_profile_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/settings_profile_image"
+        android:text="Change Your Profile"
+        android:padding="20dp"
+        android:textSize="25dp"
+        android:textStyle="italic"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:layout_marginLeft="120dp"/>
+
+
+    <EditText
+        android:id="@+id/settings_change_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/settings_profile_image"
+        android:background="@drawable/input_design"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="70dp"
+        android:hint="Change Your User Name Here" />
+
+    <EditText
+        android:id="@+id/settings_phone_no"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/settings_change_name"
+        android:background="@drawable/input_design"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="25dp"
+        android:hint="Change Your Phone number Here" />
+
+    <EditText
+        android:id="@+id/settings_hostel_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/settings_phone_no"
+        android:background="@drawable/input_design"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="25dp"
+        android:hint="Hostel Name" />
+
+    <Button
+        android:id="@+id/settings_update_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_hostel_name"
+        android:background="@drawable/buttons"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="35dp"
+        android:text="Upadate"
+        android:fontFamily="sans-serif-condensed"/>
+
+    <Button
+        android:id="@+id/settings_back_button"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_update_button"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/buttons"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="50dp"
+        android:text="Back"
+        android:fontFamily="sans-serif-condensed"/>
+
+</RelativeLayout>

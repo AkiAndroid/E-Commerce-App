@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.secondhand.Models.Users;
 import com.example.secondhand.Preval.Prevalent;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -77,12 +78,17 @@ public class MainActivity extends AppCompatActivity {
 
                 if(snapshot.child("Users").child(rollno).exists()){
 
+
+                    Users userData = snapshot.child("Users").child(rollno).getValue(Users.class);
+
                     Toast.makeText(MainActivity.this, "Logged in Sucessfully", Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent(getApplicationContext(),HomeActivity.class);
+                    Prevalent.CurrentOnlineUsers=userData;
                     startActivity(intent);
                     loadingbar.dismiss();
                 }
                 else if(snapshot.child("Seller").child(rollno).exists()){
+
                     Toast.makeText(MainActivity.this, "Logged in Sucessfully", Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent(getApplicationContext(),AdminCategoryActivity.class);
                     startActivity(intent);

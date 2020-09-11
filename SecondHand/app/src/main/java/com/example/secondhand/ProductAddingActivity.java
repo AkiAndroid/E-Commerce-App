@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,6 +42,7 @@ public class ProductAddingActivity extends AppCompatActivity {
     ProgressDialog loadingbar;
     String productRandomKey,downloadImageUri;
     StorageReference Product_Image_Ref;
+    String seller_roll_no;
 
     static final int gallerypick=1;
 
@@ -62,6 +64,10 @@ public class ProductAddingActivity extends AppCompatActivity {
         ProductRef = FirebaseDatabase.getInstance().getReference().child("Products");
         Category =getIntent().getExtras().get("category").toString();
         Product_Image_Ref = FirebaseStorage.getInstance().getReference().child("Product Image");
+
+
+        //getting_seller_rollno
+        seller_roll_no=getIntent().getStringExtra("sellerrollno");
 
 
         add_image.setOnClickListener(new View.OnClickListener() {
@@ -143,11 +149,13 @@ public class ProductAddingActivity extends AppCompatActivity {
         final StorageReference Filepath=Product_Image_Ref.child(Image_uri.getLastPathSegment() + productRandomKey + ".jpg");
 
         final UploadTask uploadTask=Filepath.putFile(Image_uri);
+        Log.i("Hello",String.valueOf(Image_uri));
 
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(ProductAddingActivity.this, "Error: "+ e.toString(), Toast.LENGTH_SHORT).show();
+                Log.i("Hello","hii2");
                 loadingbar.dismiss();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -172,6 +180,8 @@ public class ProductAddingActivity extends AppCompatActivity {
 
                         if(task.isSuccessful()){
 
+                            downloadImageUri=task.getResult().toString();
+
                             SaveProductInfotoDatabase();
                         }
                     }
@@ -185,14 +195,16 @@ public class ProductAddingActivity extends AppCompatActivity {
 
         HashMap<String,Object> productHashMap=new HashMap<>();
         productHashMap.put("pid",productRandomKey);
+        productHashMap.put("Productname",productname);
         productHashMap.put("Date",saveCurrentDate);
         productHashMap.put("Time",saveCurrentTime);
         productHashMap.put("Description",description);
         productHashMap.put("image",downloadImageUri);
         productHashMap.put("category",Category);
-        productHashMap.put("Model Name",modelname);
+        productHashMap.put("ModelName",modelname);
         productHashMap.put("Price",Pricing);
         productHashMap.put("Duration",Duration);
+        productHashMap.put("sellerrollno",seller_roll_no);
 
         ProductRef.child(productRandomKey).updateChildren(productHashMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -201,7 +213,8 @@ public class ProductAddingActivity extends AppCompatActivity {
 
                         if(task.isSuccessful())
                         {
-                            downloadImageUri=task.getResult().toString();
+
+
 
                             Intent intent=new Intent(getApplicationContext(),AdminCategoryActivity.class);
                             startActivity(intent);
@@ -212,6 +225,7 @@ public class ProductAddingActivity extends AppCompatActivity {
                         }
                         else {
                             Toast.makeText(ProductAddingActivity.this, "Error: "+ task.getException().toString(), Toast.LENGTH_SHORT).show();
+                            Log.i("Hello","hi0");
                             loadingbar.dismiss();
                         }
                     }
@@ -226,6 +240,7 @@ public class ProductAddingActivity extends AppCompatActivity {
         if(requestCode==gallerypick && resultCode==RESULT_OK && data!=null){
             Image_uri = data.getData();
             add_image.setImageURI(Image_uri);
+            Log.i("Hello","hi3");
         }
     }
 }

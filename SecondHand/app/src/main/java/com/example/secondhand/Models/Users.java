@@ -1,18 +1,20 @@
 package com.example.secondhand.Models;
 
 public class Users {
-    private String mailid,name,password,phoneno,rollno;
+    private String mailid,name,password,phoneno,rollno,image,hostelname;
 
     public Users(){
 
     }
 
-    public Users(String mailid, String name, String password, String phoneno, String rollno) {
+    public Users(String mailid, String name, String password, String phoneno, String rollno, String image, String hostelname) {
         this.mailid = mailid;
         this.name = name;
         this.password = password;
         this.phoneno = phoneno;
         this.rollno = rollno;
+        this.image = image;
+        this.hostelname = hostelname;
     }
 
     public String getMailid() {
@@ -53,5 +55,21 @@ public class Users {
 
     public void setRollno(String rollno) {
         this.rollno = rollno;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getHostelname() {
+        return hostelname;
+    }
+
+    public void setHostelname(String hostelname) {
+        this.hostelname = hostelname;
     }
 }

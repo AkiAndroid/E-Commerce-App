@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SellerInfo">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/seller_profile_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/image1"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/seller_info_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seller_profile_image"
+        android:text="Name"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/common_google_signin_btn_text_light_pressed"/>
+
+    <TextView
+        android:id="@+id/seller_hostel_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seller_info_Name"
+        android:text="Name"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/common_google_signin_btn_text_light_pressed"/>
+
+    <TextView
+        android:id="@+id/seller_info_contact_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seller_hostel_name"
+        android:text="Name"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/common_google_signin_btn_text_light_pressed"/>
+
+
+
+
+
+</RelativeLayout>

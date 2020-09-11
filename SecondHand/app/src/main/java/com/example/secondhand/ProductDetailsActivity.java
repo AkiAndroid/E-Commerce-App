@@ -3,6 +3,7 @@ package com.example.secondhand;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +33,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     TextView product_name,model_name,descripion_text,condition,price;
     Button RequestButton;
     String productid;
+    String sellerrollno;
 
 
 
@@ -57,7 +59,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         RequestButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 addingToCart();
             }
         });
@@ -80,7 +83,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
         cartMap.put("productName",product_name.getText().toString());
         cartMap.put("price",price.getText().toString());
         cartMap.put("date",saveCurrentDate);
-        cartMap.put("time",currentTime);
+        cartMap.put("time",saveCurrentTime);
+        cartMap.put("sellerrollno",sellerrollno);
 
         cartListRef.child("User View").child(Prevalent.CurrentOnlineUsers.getRollno())
                 .child("Products").child(productid)
@@ -90,7 +94,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
             {
                 if (task.isSuccessful())
                 {
-                    cartListRef.child("Admin View").child(Prevalent.CurrentOnlineUsers.getRollno())
+                    cartListRef.child("Seller View").child(Prevalent.CurrentOnlineUsers.getRollno())
                             .child("Products").child(productid)
                             .updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -99,6 +103,9 @@ public class ProductDetailsActivity extends AppCompatActivity {
                             if (task.isSuccessful())
                             {
                                 Toast.makeText(ProductDetailsActivity.this, "Requested Sucessfully", Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(getApplicationContext(),SellerInfo.class);
+                                intent.putExtra("sellerinforollno",sellerrollno);
+                                startActivity(intent);
                             }
                         }
                     });
@@ -124,6 +131,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 descripion_text.setText("Description"+ " " +products.getDescription());
                 condition.setText("Condition"+ " " + products.getDuration());
                 price.setText("Price"+ " " +products.getPrice());
+                sellerrollno=products.getSellerrollno();
                 Picasso.get().load(products.getImage()).into(product_image);
 
             }

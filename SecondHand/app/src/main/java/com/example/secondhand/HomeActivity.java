@@ -51,6 +51,7 @@ public class HomeActivity extends AppCompatActivity {
         TextView userName= headerView.findViewById(R.id.user_name_nav);
         CircleImageView profile_pic=headerView.findViewById(R.id.profile_image);
 
+
         recyclerView=findViewById(R.id.recyler_menu);
         //recyclerView.setHasFixedSize(true);
         layoutManager= new LinearLayoutManager(this);
@@ -64,13 +65,14 @@ public class HomeActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 int id=item.getItemId();
-                if (id==R.id.nav_cart){
 
+                 if(id==R.id.nav_order)
+                 {
+                  Intent intent=new Intent(getApplicationContext(),MyOrdersActivity.class);
+                  startActivity(intent);
                 }
-                else if(id==R.id.nav_order){
-
-                }
-                else if(id==R.id.nav_categories){
+                else if(id==R.id.nav_categories)
+                {
 
                 }
                 else if (id==R.id.nav_settings)

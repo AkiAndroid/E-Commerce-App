@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.secondhand.Preval.Prevalent;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -38,7 +39,7 @@ public class ProductAddingActivity extends AppCompatActivity {
     ImageView add_image;
     Button publish_button;
     Uri Image_uri;
-    DatabaseReference ProductRef;
+    DatabaseReference ProductRef,MyproductsRef;
     ProgressDialog loadingbar;
     String productRandomKey,downloadImageUri;
     StorageReference Product_Image_Ref;
@@ -62,6 +63,7 @@ public class ProductAddingActivity extends AppCompatActivity {
         publish_button=findViewById(R.id.publish_button);
 
         ProductRef = FirebaseDatabase.getInstance().getReference().child("Products");
+        ;
         Category =getIntent().getExtras().get("category").toString();
         Product_Image_Ref = FirebaseStorage.getInstance().getReference().child("Product Image");
 
@@ -204,7 +206,7 @@ public class ProductAddingActivity extends AppCompatActivity {
         productHashMap.put("ModelName",modelname);
         productHashMap.put("Price",Pricing);
         productHashMap.put("Duration",Duration);
-        productHashMap.put("sellerrollno",seller_roll_no);
+        productHashMap.put("sellerrollno", seller_roll_no);
 
         ProductRef.child(productRandomKey).updateChildren(productHashMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -230,6 +232,23 @@ public class ProductAddingActivity extends AppCompatActivity {
                         }
                     }
                 });
+        MyproductsRef=FirebaseDatabase.getInstance().getReference().child("My Products");
+        //Adding my product details
+        HashMap<String,Object> MyproductHashMap=new HashMap<>();
+        MyproductHashMap.put("pid",productRandomKey);
+        MyproductHashMap.put("Productname",productname);
+        MyproductHashMap.put("Date",saveCurrentDate);
+        MyproductHashMap.put("Time",saveCurrentTime);
+        MyproductHashMap.put("Description",description);
+        MyproductHashMap.put("image",downloadImageUri);
+        MyproductHashMap.put("category",Category);
+        MyproductHashMap.put("ModelName",modelname);
+        MyproductHashMap.put("Price",Pricing);
+        MyproductHashMap.put("Duration",Duration);
+        MyproductHashMap.put("sellerrollno", seller_roll_no);
+
+        MyproductsRef.child(seller_roll_no).child("Products").child(productRandomKey).updateChildren(MyproductHashMap);
+
     }
 
 

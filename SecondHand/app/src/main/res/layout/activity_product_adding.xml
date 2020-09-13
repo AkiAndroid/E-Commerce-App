@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backg2"
     tools:context=".ProductAddingActivity">
 
     <ScrollView
@@ -13,116 +14,122 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/product_adding_page_name"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Product Description"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:textSize="40sp"
-            android:fontFamily="cursive"
-            android:textColor="@color/colorPrimary"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/product_adding_page_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:fontFamily="cursive"
+                android:text="Product Description"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="40sp" />
 
 
-        <EditText
-            android:id="@+id/Product_Name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
-            android:inputType="textMultiLine"
-            android:padding="20dp"
-            android:background="@drawable/input_design"
-            android:hint="Enter the name of the Product"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            <EditText
+                android:id="@+id/Product_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="150dp"
+                android:layout_marginRight="20dp"
+                android:textColorHint="@color/colorPrimary"
+                android:background="@drawable/input_design"
+                android:hint="Enter the name of the Product"
+                android:inputType="textMultiLine"
+                android:padding="20dp" />
 
-        <EditText
-            android:id="@+id/Model_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Product_Name"
-            android:layout_marginTop="50dp"
-            android:hint="Model Name"
-            android:padding="20dp"
-            android:background="@drawable/input_design"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            <EditText
+                android:id="@+id/Model_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Product_Name"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="20dp"
+                android:textColorHint="@color/colorPrimary"
+                android:background="@drawable/input_design"
+                android:hint="Model Name"
+                android:padding="20dp" />
 
-        <EditText
-            android:id="@+id/Description"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_below="@+id/Model_name"
-            android:layout_marginTop="50dp"
-            android:hint="Description"
-            android:inputType="textMultiLine"
-            android:padding="20dp"
-            android:background="@drawable/input_design"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            <EditText
+                android:id="@+id/Description"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/Model_name"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="20dp"
+                android:textColorHint="@color/colorPrimary"
+                android:background="@drawable/input_design"
+                android:hint="Description"
+                android:inputType="textMultiLine"
+                android:padding="20dp" />
 
 
-        <EditText
-            android:id="@+id/price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Product_Name"
-            android:layout_marginTop="50dp"
-            android:hint="Pricing"
-            android:padding="20dp"
-            android:background="@drawable/input_design"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            <EditText
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Product_Name"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="20dp"
+                android:textColorHint="@color/colorPrimary"
+                android:background="@drawable/input_design"
+                android:hint="Pricing in INR"
+                android:padding="20dp" />
 
-        <EditText
-            android:id="@+id/duration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/price"
-            android:layout_marginTop="50dp"
-            android:hint="Duration"
-            android:padding="20dp"
-            android:background="@drawable/input_design"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
-        
-        <ImageView
-            android:id="@+id/upload_image"
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/duration"
-            android:layout_marginStart="110dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/upload_image"/>
+            <EditText
+                android:id="@+id/duration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/price"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="20dp"
+                android:textColorHint="@color/colorPrimary"
+                android:background="@drawable/input_design"
+                android:hint="Condition"
+                android:padding="20dp" />
 
-        <Button
-            android:id="@+id/publish_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/upload_image"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/buttons"
-            android:padding="20dp"
-            android:textAllCaps="false"
-            android:textSize="20sp"
-            android:text="Publish"
-            android:fontFamily="sans-serif-medium"/>
+            <ImageView
+                android:id="@+id/upload_image"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_below="@+id/duration"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="110dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/upload_image" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/publish_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upload_image"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/buttons"
+                android:fontFamily="sans-serif-medium"
+                android:padding="20dp"
+                android:text="Publish"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+        </LinearLayout>
     </ScrollView>
 </RelativeLayout>

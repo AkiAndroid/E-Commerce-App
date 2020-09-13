@@ -73,7 +73,8 @@ public class HomeActivity extends AppCompatActivity {
                 }
                 else if(id==R.id.nav_categories)
                 {
-
+                  Intent intent = new Intent(getApplicationContext(),SearchProductActivity.class);
+                   startActivity(intent);
                 }
                 else if (id==R.id.nav_settings)
                 {

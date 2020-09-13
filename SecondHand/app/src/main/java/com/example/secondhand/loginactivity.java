@@ -63,6 +63,7 @@ TextView Adminpagelink,Userpagelink,pagename;
                 Userpagelink.setVisibility(View.VISIBLE);
                 pagename.setText("Seller");
                 Log.d("Hello",ParentdbName);
+                rememberMe.setAlpha(0);
 
             }
         });
@@ -74,6 +75,7 @@ TextView Adminpagelink,Userpagelink,pagename;
                 Userpagelink.setVisibility(View.INVISIBLE);
                 Adminpagelink.setVisibility(View.VISIBLE);
                 pagename.setText("User");
+                rememberMe.setAlpha(1);
 
             }
         });
@@ -140,7 +142,7 @@ TextView Adminpagelink,Userpagelink,pagename;
                                     if(ParentdbName.equals("Seller")){
                                         Toast.makeText(loginactivity.this, "Logged in Sucessfully", Toast.LENGTH_SHORT).show();
                                         loadingbar.dismiss();
-
+                                        Prevalent.CurrentOnlineUsers=userData;
                                         Intent intent=new Intent(getApplicationContext(),AdminCategoryActivity.class);
                                         startActivity(intent);
                                     }

@@ -27,7 +27,8 @@ public class MyorderViewHolder extends RecyclerView.ViewHolder implements View.O
 
     }
 
-    public void setItemClickListner(ItemClickListner itemClickListner) {
+    public void setItemClickListner(ItemClickListner itemClickListner)
+    {
         this.itemClickListner = itemClickListner;
     }
 }

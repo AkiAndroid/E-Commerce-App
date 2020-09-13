@@ -85,6 +85,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         cartMap.put("date",saveCurrentDate);
         cartMap.put("time",saveCurrentTime);
         cartMap.put("sellerrollno",sellerrollno);
+        cartMap.put("buyerrollno",Prevalent.CurrentOnlineUsers.getRollno());
 
         cartListRef.child("User View").child(Prevalent.CurrentOnlineUsers.getRollno())
                 .child("Products").child(productid)
@@ -127,10 +128,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 Products products=snapshot.getValue(Products.class);
 
                 product_name.setText(products.getProductname());
-                model_name.setText("Model Name"+ " " +products.getModelName());
-                descripion_text.setText("Description"+ " " +products.getDescription());
-                condition.setText("Condition"+ " " + products.getDuration());
-                price.setText("Price"+ " " +products.getPrice());
+                model_name.setText("Model Name:"+ " " +products.getModelName());
+                descripion_text.setText("Description:"+ " " +products.getDescription());
+                condition.setText("Condition:"+ " " + products.getDuration());
+                price.setText("Price Rs."+ " " +products.getPrice());
                 sellerrollno=products.getSellerrollno();
                 Picasso.get().load(products.getImage()).into(product_image);
 

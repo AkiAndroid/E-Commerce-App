@@ -72,7 +72,7 @@ public class MyOrdersActivity extends AppCompatActivity {
                               };
 
                       AlertDialog.Builder builder= new AlertDialog.Builder(MyOrdersActivity.this);
-                      builder.setTitle("Remove the request");
+                      builder.setTitle("Request");
 
                       builder.setItems(options, new DialogInterface.OnClickListener() {
                           @Override
@@ -104,6 +104,12 @@ public class MyOrdersActivity extends AppCompatActivity {
                                                  }
                                               }
                                           });
+
+                                  myOrderRef.child("Seller View")
+                                          .child(Prevalent.CurrentOnlineUsers.getRollno())
+                                          .child("Products")
+                                          .child(model.getPid())
+                                          .removeValue();
                               }
 
                           }

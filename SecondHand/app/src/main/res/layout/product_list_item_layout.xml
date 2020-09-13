@@ -28,6 +28,10 @@
             android:textStyle="italic"
             android:textColor="@color/common_google_signin_btn_text_light"/>
 
+
+
+
+
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

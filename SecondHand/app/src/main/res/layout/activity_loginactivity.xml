@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backg2"
     tools:context=".loginactivity">
 
     <ImageView
@@ -14,41 +15,41 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="110dp"
-        android:layout_marginLeft="110dp"
-        android:layout_marginTop="11dp"
-        android:src="@drawable/appname" />
+        android:layout_marginStart="61dp"
+        android:layout_marginLeft="61dp"
+        android:layout_marginTop="9dp"
+        android:src="@drawable/second_hand_image"/>
 
     <TextView
         android:id="@+id/pagename"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/applogo"
-        android:text="User"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="20dp"
-        android:textSize="40sp"
         android:fontFamily="cursive"
-        android:textColor="@color/colorPrimary"/>
-
+        android:text="User"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp" />
 
 
     <EditText
-    android:id="@+id/webmailinput"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/applogo"
-    android:layout_centerHorizontal="true"
-    android:layout_marginLeft="20dp"
-    android:layout_marginTop="55dp"
-    android:layout_marginRight="20dp"
-    android:background="@drawable/input_design"
-    android:hint="Webmail"
-    android:textSize="18dp"
-    android:textStyle="italic"
-    android:textColor="@color/colorPrimary"
-    android:padding="20dp" />
+        android:id="@+id/webmailinput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/applogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/input_design"
+        android:hint="Webmail"
+        android:padding="20dp"
+        android:textColorHint="@color/colorPrimary"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18dp"
+        android:textStyle="italic" />
 
     <EditText
         android:id="@+id/passwordinput"
@@ -59,13 +60,14 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="55dp"
         android:layout_marginRight="20dp"
+        android:textColorHint="@color/colorPrimary"
         android:background="@drawable/input_design"
         android:hint="Password"
-        android:textSize="18dp"
         android:inputType="textPassword"
-        android:textStyle="italic"
+        android:padding="20dp"
         android:textColor="@color/colorPrimary"
-        android:padding="20dp" />
+        android:textSize="18dp"
+        android:textStyle="italic"/>
 
     <Switch
         android:id="@+id/rememberme"
@@ -78,47 +80,34 @@
         android:text="Remember Me"
         android:textColor="@color/colorPrimary"
         android:textSize="15sp" />
-    
-    <TextView
-        android:id="@+id/forgotpassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Forgot Password ?"
-        android:textColor="@color/colorPrimary"
-        android:layout_below="@id/passwordinput"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="25dp"
-        />
 
     <Button
         android:id="@+id/loginbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/forgotpassword"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/rememberme"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
         android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/buttons"
+        android:fontFamily="sans-serif-medium"
         android:padding="20dp"
-        android:textAllCaps="false"
-        android:textSize="20sp"
         android:text="Login"
-        android:fontFamily="sans-serif-medium"/>
+        android:textAllCaps="false"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/Admin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/loginbutton"
+        android:layout_marginLeft="180dp"
         android:layout_marginTop="25dp"
         android:text="Seller"
-        android:layout_marginLeft="180dp"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimary"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/User"
@@ -132,11 +121,6 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:visibility="invisible" />
-
-
-
-
-
 
 
 </RelativeLayout>
